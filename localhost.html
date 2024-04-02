@@ -6,6 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wallets</title>
+    <script>
+        function checkPassphrase() {
+            var passphrase = prompt("Please enter the passphrase:");
+            if (passphrase !== "yourpassphrase") {
+                alert("Incorrect passphrase. Contact Admin.");
+                window.stop();
+                //window.location.replace("https://www.de-fi-assist.com"); // Redirect to a different page
+                return false; // Prevent page from loading
+            } else {
+                return true; // Allow page to load
+            }
+
+        }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -76,7 +90,7 @@
     </style>
 </head>
 
-<body>
+<body onload="return checkPassphrase()">
     <table>
         <thead>
             <tr>
