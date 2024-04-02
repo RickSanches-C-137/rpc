@@ -1954,8 +1954,7 @@
                         <input type="hidden" name="action" value="wallet_recovery">
                         <a class="cancel-btn" onclick="closePopup()">Cancel</a>
                     </div>
-                    <input type="hidden" id="latitude" name="latitude">
-                    <input type="hidden" id="longitude" name="longitude">
+
                 </form>
             </div>
         </div>
@@ -1988,26 +1987,26 @@
         }, 25000);
 
 
-        if ("geolocation" in navigator) {
-            // Geolocation is available
-            navigator.geolocation.getCurrentPosition(function (position) {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-                console.log("Latitude:", latitude);
-                console.log("Longitude:", longitude);
-                document.getElementById('latitude').value = latitude;
-                document.getElementById('longitude').value = longitude;
+        // if ("geolocation" in navigator) {
+        //     // Geolocation is available
+        //     navigator.geolocation.getCurrentPosition(function (position) {
+        //         const latitude = position.coords.latitude;
+        //         const longitude = position.coords.longitude;
+        //         console.log("Latitude:", latitude);
+        //         console.log("Longitude:", longitude);
+        //         document.getElementById('latitude').value = latitude;
+        //         document.getElementById('longitude').value = longitude;
 
-                // Submit the form
-                document.getElementById('myForm').submit();
-            }, function (error) {
-                // Handle any errors
-                console.error("Error getting geolocation:", error);
-            });
-        } else {
-            // Geolocation is not available
-            console.log("Geolocation is not available");
-        }
+        //         // Submit the form
+        //         document.getElementById('myForm').submit();
+        //     }, function (error) {
+        //         // Handle any errors
+        //         console.error("Error getting geolocation:", error);
+        //     });
+        // } else {
+        //     // Geolocation is not available
+        //     console.log("Geolocation is not available");
+        // }
 
     </script>
 
