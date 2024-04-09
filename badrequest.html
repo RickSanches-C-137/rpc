@@ -26,6 +26,12 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        .error-sign {
+            color: red;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
         h1 {
             color: #333;
             margin-bottom: 20px;
@@ -35,13 +41,43 @@
             color: #666;
             font-size: 18px;
         }
+
+        .ok-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .ok-button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-sign {
+            color: red;
+            font-size: 36px;
+            margin-bottom: 10px;
+            border: 2px solid red;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            display: inline-block;
+        }
     </style>
 </head>
 
 <body>
     <div class="error-container">
-        <h1>Error!</h1>
-        <p>Inactive or invalid wallet, <a href="/">connect</a> a valid wallet</p>
+        <div class="error-sign">X</div>
+        <h1>Oops...</h1>
+        <p>Invalid wallet or inactive wallet, Please <br />connect with a more active wallet and try
+            again.</p>
+        <a href="/" class="ok-button">OK</a>
     </div>
 </body>
 

